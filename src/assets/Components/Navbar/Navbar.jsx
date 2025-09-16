@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className="navbar bg-base-100 shadow-sm md:px-10 py-7">
+      <div className="navbar bg-base-100 shadow-sm px-5 md:px-10 py-7">
         <div className="flex-1">
           <Link
             className=" text-3xl md:text-4xl text-secondary font-bold"
@@ -28,8 +28,8 @@ const Navbar = () => {
             Byte<span className="text-primary">Blaze</span>
           </Link>
         </div>
-        <div className="flex-none">
-          <ul className="menu menu-horizontal px-1 md:text-xl md: gap-5">
+        <div className="flex-none flex">
+          <ul className="menu menu-horizontal hidden md:flex px-1 md:text-xl md:gap-5">
             <li>
               <NavLink
                 className={({ isActive }) =>
@@ -45,8 +45,7 @@ const Navbar = () => {
                 className={({ isActive }) =>
                   isActive ? "text-primary font-bold underline" : "font-bold"
                 }
-                to={"/blogs"}
-              >
+                to={"/blogs"}>
                 Blogs
               </NavLink>
             </li>

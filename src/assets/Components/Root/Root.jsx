@@ -8,7 +8,9 @@ const Root = () => {
            <div className="sticky z-50 top-0 ">
              <Navbar></Navbar>
            </div>
-            <Outlet></Outlet>
+           <div className="min-h-[calc(100vh-180px)]">
+             <Outlet></Outlet>
+           </div>
             <Footer></Footer>
         </div>
     );

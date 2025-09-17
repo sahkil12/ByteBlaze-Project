@@ -21,10 +21,10 @@ export const setBlogs = (blog) =>{
         toast.success("Blog Bookmark Successfully")
     }
 }
-
+// remove blogs in localstorage
 export const removeBlog = (id) =>{
     let blogs = getBlogs()
     const remainingBlogs = blogs.filter(b => b.id !== id)
     localStorage.setItem("blogs", JSON.stringify(remainingBlogs))
-    toast.remove("Blog Remove From Bookmark!")
+    toast.success("Blog Remove From Bookmark!")
 }

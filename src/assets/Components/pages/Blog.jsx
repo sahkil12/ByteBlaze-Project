@@ -3,7 +3,6 @@ import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const Blog = () => {
   const blog = useLoaderData();
-  console.log(blog);
   const [tabIndex, setTabIndex] = useState(0)
   const {
     title,
@@ -11,7 +10,6 @@ const Blog = () => {
     published_timestamp,
     comments_count,
     public_reactions_count,
-	tags
   } = blog;
   return (
     <div>
@@ -76,13 +74,6 @@ const Blog = () => {
           </Link>
         </div>
 		<Outlet></Outlet>
-
-		<div className="flex flex-wrap py-6 gap-2 ">
-			
-			{tags.map(tag=> (
-					<a key={tag} rel="noopener noreferrer" href="#" className="px-3 py-1 rounded-sm text-black hover:underline">#{tag}</a>
-			))}
-		</div>
 
       </div>
     </div>

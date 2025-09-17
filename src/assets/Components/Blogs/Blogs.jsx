@@ -3,6 +3,7 @@ import BlogCart from "./BlogCart";
 
 const Blogs = () => {
     const blogs = useLoaderData([])
+	console.log(blogs);
     return (
         <div>
                 <section className="my-14">

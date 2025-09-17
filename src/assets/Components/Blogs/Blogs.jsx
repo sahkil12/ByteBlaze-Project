@@ -5,7 +5,7 @@ const Blogs = () => {
     const blogs = useLoaderData([])
     return (
         <div>
-                <section className="">
+                <section className="my-14">
 	<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         {/* header card  */}
 		<a rel="noopener noreferrer" href="#" className="block max-w-sm gap-3 mx-auto sm:max-w-full group hover:no-underline focus:no-underline lg:grid lg:grid-cols-12 ">

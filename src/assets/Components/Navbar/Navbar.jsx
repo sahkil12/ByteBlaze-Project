@@ -29,7 +29,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="flex-none flex">
-          <ul className="menu menu-horizontal hidden md:flex px-1 md:text-xl md:gap-5">
+          <ul className="menu menu-horizontal  px-1 md:text-xl md:gap-5">
             <li>
               <NavLink
                 className={({ isActive }) =>

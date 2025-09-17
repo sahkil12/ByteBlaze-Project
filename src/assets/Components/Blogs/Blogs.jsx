@@ -1,11 +1,17 @@
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
 import BlogCart from "./BlogCart";
+import Spinner from "../Soinner/Spinner";
+import { Helmet } from "react-helmet";
 
 const Blogs = () => {
     const blogs = useLoaderData([])
-	console.log(blogs);
+	const navigation = useNavigation()
+	if(navigation.state === 'loading') return <Spinner></Spinner>;
     return (
         <div>
+			<Helmet>
+				<title>Blogs | ByteBlaze</title>
+			</Helmet>
                 <section className="my-14">
 	<div className="container max-w-6xl p-6 mx-auto space-y-6 sm:space-y-12">
         {/* header card  */}
@@ -18,9 +24,9 @@ const Blogs = () => {
 			</div>
 		</a>
         {/* header card end */}
-		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+		<div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 ">
 			
-            {blogs.map((blog, idx)=> <BlogCart key={idx} blog={blog}></BlogCart>)}
+            {blogs.slice(1, 19).map((blog, idx)=> <BlogCart key={idx} blog={blog}></BlogCart>)}
 			
 		</div>
 		

@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { Helmet } from "react-helmet";
+import { MdBookmarkAdd } from "react-icons/md";
 import { Link, Outlet, useLoaderData } from "react-router-dom";
+import { setBlogs } from "../DataBase/LocalData";
 
 const Blog = () => {
   const blog = useLoaderData();
@@ -11,8 +14,16 @@ const Blog = () => {
     comments_count,
     public_reactions_count,
   } = blog;
+
+  const handleBookmark = (blog) =>{
+    setBlogs(blog)
+  }
+
   return (
     <div>
+      <Helmet>
+        <title>More About - {title}</title>
+      </Helmet>
       <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
         <article className="space-y-8 ">
           <div className="space-y-6">
@@ -72,6 +83,12 @@ const Blog = () => {
             </svg>
             <span>Author</span>
           </Link>
+          {/* bookmarks button */}
+          <div 
+          onClick={()=>handleBookmark(blog)}
+          className=" p-4 mx-8 bg-purple-200 hover:bg-purple-300 rounded-full items-center flex justify-center hover:scale-105 overflow-hidden">
+            <MdBookmarkAdd className="text-xl text-secondary"></MdBookmarkAdd>
+          </div>
         </div>
 		<Outlet></Outlet>
 
